@@ -1,0 +1,2 @@
+- Lam game su dung div vs css 
+- Su dung typescript 
