@@ -1,8 +1,8 @@
 import { GameRunner } from "./main/GameRunner";
 
-const Hello = (name: string): string => {
-  return "Hello " + name;
-}
+// const Hello = (name: string): string => {
+//   return "Hello " + name;
+// }
+// alert(Hello('hoge'));
 
-alert(Hello('hoge'));
 new GameRunner()

@@ -8,9 +8,16 @@ module.exports = {
   module: {
       rules: [
           {
-              test: /\.ts$/,
-              loader: 'ts-loader'
-          }
+            test: /\.ts$/,
+            loader: 'ts-loader'
+          },
+          {
+            test: /\.(png|jpe?g|gif|jp2|webp)$/,
+            loader: 'file-loader',
+            options: {
+              name: 'build/images/[name].[ext]',
+            }
+          },
       ]
   },
   resolve: {

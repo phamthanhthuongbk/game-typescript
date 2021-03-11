@@ -5,18 +5,41 @@ export abstract  class CoreGameRunner {
   public height = 200
   public frameRate = 24
 
-  public childs: CoreGameObject[]
+  private childs: CoreGameObject[] = []
+  addChild<T extends CoreGameObject>(child: T){
+    this.childs.push(child)
+  }
 
   /*
   * Run Game
   */
   public async run() {
     while (true) {
-      this.childs.forEach(gameObject => {
-        gameObject.coreUpdate()
-      });
+      this.updateLogic()
+      this.updateUi()
       await this.sleep()
     }
+  }
+
+  private updateLogic(){
+    this.childs.forEach(gameObject => {
+      gameObject.coreUpdate()
+    });
+  }
+
+  private updateUi(){
+    const root = document.getElementById("game-body")
+    root.innerHTML = ""
+
+    const div = document.createElement('div')
+    div.style.width = `${this.width}`
+    div.style.height = `${this.height}`
+
+    this.childs.forEach(gameObject => {
+      div.appendChild(gameObject.coreUpdateUi())
+    });
+
+    root.appendChild(div)
   }
 
   private sleep() {
