@@ -2,7 +2,7 @@ import { CoreGameObject } from "../../core/CoreGameObject";
 import flapybird from "../assets/file.png";
 
 
-export class Plane extends CoreGameObject {
+export class Bird extends CoreGameObject {
   update(): void {
     this.x += 1
   }
