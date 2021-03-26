@@ -9,6 +9,8 @@ export class Plane extends CoreGameObject {
   constructor(){
     super();
     const img = new Image()
+    img.width = 50
+    img.height = 50
     img.src = flapybird
     this.addUiElement(img)
   }
