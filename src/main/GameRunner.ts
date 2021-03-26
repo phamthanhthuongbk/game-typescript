@@ -4,7 +4,9 @@ import { Plane } from "./charaters/Plane";
 export class GameRunner extends CoreGameRunner  {
   constructor() {
     super()
-    this.addChild(new Plane())
+
+    const bird = new Plane()
+    this.addChild(bird)
     this.run()
   }
 }

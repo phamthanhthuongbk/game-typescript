@@ -3,12 +3,13 @@ import flapybird from "../assets/file.png";
 
 
 export class Plane extends CoreGameObject {
-  count = 1;
   update(): void {
+    this.x += 1
   }
-  get gameUi(): HTMLElement {
+  constructor(){
+    super();
     const img = new Image()
     img.src = flapybird
-    return img
+    this.addUiElement(img)
   }
 }
