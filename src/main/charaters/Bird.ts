@@ -5,6 +5,7 @@ import flapybird from "../assets/file.png";
 export class Bird extends CoreGameObject {
   update(): void {
     this.x += 1
+    this.rotation += 1
   }
   constructor(){
     super();

@@ -3,7 +3,7 @@ import { Bird } from "./charaters/Bird";
 
 export class GameRunner extends CoreGameRunner  {
   constructor() {
-    super()
+    super("game-body")
 
     const bird1 = new Bird()
     bird1.y = 10

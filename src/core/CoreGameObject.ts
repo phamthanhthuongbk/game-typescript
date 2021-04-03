@@ -2,6 +2,8 @@ export abstract class CoreGameObject {
   public x: number = 0;
   public y: number = 0;
 
+  public rotation: number = 0;
+
   abstract update(): void
 
   addUiElement(uiElement: HTMLElement | null){
@@ -46,8 +48,16 @@ export abstract class CoreGameObject {
 
   // I want this is private
   public baseUpdate(){
+    // Set position
     this.objectElement.style.top = `${this.y}px`
     this.objectElement.style.left = `${this.x}px`
+
+    // Set Rotation
+    this.objectElement.style.webkitTransform = 'rotate('+this.rotation+'deg)'; 
+    // this.objectElement.style.mozTransform    = 'rotate('+this.rotation+'deg)'; 
+    // this.objectElement.style.msTransform     = 'rotate('+this.rotation+'deg)'; 
+    // this.objectElement.style.oTransform      = 'rotate('+this.rotation+'deg)'; 
+    this.objectElement.style.transform       = 'rotate('+this.rotation+'deg)'; 
 
     if (this.needUpdateUiElement) {
       // Reset current element

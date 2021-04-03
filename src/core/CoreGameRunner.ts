@@ -3,12 +3,12 @@ import { CoreGameObject } from "./CoreGameObject";
 export abstract  class CoreGameRunner extends CoreGameObject {
   public width = 200
   public height = 200
-  public frameRate = 24
+  public frameRate = 240
 
-  constructor(){
+  constructor(elementId: string){
     super()
     
-    const root = document.getElementById("game-body")
+    const root = document.getElementById(elementId)
     root.innerHTML = ""
     root.appendChild(this.getObjectElement())
   }
